@@ -13,12 +13,12 @@ Usage
 Add to your code:
 
 ```javascript
-	var tinytim = require('../');
-	var result = tinytim.tim("Hello {{place}}", {place: "world"});
+	var tim = require('tinytim').tim;
+	var result = tim("Hello {{place}}", {place: "world"});
 	console.log(result); // Hello world
 ```
 
-See test/test.js for example
+See [test/test.js](https://github.com/baryon/node-tinytim/blob/master/test/test.js) for example
 
 
 # Tim
@@ -138,7 +138,13 @@ Further examples are discussed in the section "iterating through arrays" below.
 By default, template tags are delimited by "`{{`" and "`}}`" tokens.
 To change this, edit the `start` and `end` vars in the code.
 
-
+```javascript
+	var tinytim = require('tinytim');
+	tinytim.start = "<%";
+	tinytim.end = "%>";
+	var result = tinytim.tim("Hello <%place%>", {place: "world"});
+	console.log(result); // Hello world
+```
 
 
 ### 0.0.1
