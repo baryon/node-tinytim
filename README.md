@@ -18,7 +18,25 @@ Add to your code:
 	console.log(result); // Hello world
 ```
 
-See [test/test.js](https://github.com/baryon/node-tinytim/blob/master/test/test.js) for example
+See [test/test.js](https://github.com/baryon/node-tinytim/blob/master/test/test.js) as example
+
+and support render and renderFile methods
+See [test/render.js](https://github.com/baryon/node-tinytim/blob/master/test/render.js) and [test/renderFile.js](https://github.com/baryon/node-tinytim/blob/master/test/renderFile.js)  for details.
+
+```javascript
+	var tinytim = require('tinytim');
+	var result = tinytim.render("Hello {{place}}", {place: "world"});
+	console.log(result); // Hello world
+```
+
+```javascript
+	var tinytim = require('tinytim');
+	var result1 = tinytim.renderFile("./hello.tim", {place: "world"}); //dont use cache to render 
+	console.log(result1); // Hello world
+
+	var result2 = tinytim.renderFile("./hello.tim", {place: "world"}, true); //use cache to render 
+	console.log(result2); // Hello world
+```
 
 
 # Tim
@@ -148,6 +166,10 @@ To change this, edit the `start` and `end` vars in the code.
 ```
 
 ## History
+
+### 0.1.0
+
+* support render and renderFile methods.  
 
 ### 0.0.2
 

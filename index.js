@@ -1,1 +1,1 @@
-module.exports = require("./lib/tinytim")
+module.exports = require("./lib/index")
