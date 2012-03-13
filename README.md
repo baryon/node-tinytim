@@ -1,4 +1,4 @@
-#tinytim for node.js  [![Build Status](https://secure.travis-ci.org/baryon/tracer.png)](http://travis-ci.org/baryon/node-tinytim)
+#tinytim for node.js  [![Build Status](https://secure.travis-ci.org/baryon/node-tinytim.png)](http://travis-ci.org/baryon/node-tinytim)
 
 Node.js port of [tinytim](https://github.com/premasagar/tim/) (A tiny, secure JavaScript micro-templating script)
 
