@@ -147,6 +147,7 @@ To change this, edit the `start` and `end` vars in the code.
 	console.log(result); // Hello world
 ```
 
+## History
 
 ### 0.0.2
 
