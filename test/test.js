@@ -1,13 +1,13 @@
 var assert = require("assert");
 
 exports["simple"] = function() {
-	var tinytim = require('../');
-	var result = tinytim.tim("Hello {{place}}", {place: "world"});
+	var tim = require('../').tim;
+	var result = tim("Hello {{place}}", {place: "world"});
 	assert.equal(result, "Hello world");
 }
 
 exports["path"] = function() {
-	var tinytim = require('../');
+	var tim = require('../').tim;
 	var template = "Hello {{place}}. My name is {{person.name}}.",
     data = {
         place: "Brighton",
@@ -16,47 +16,54 @@ exports["path"] = function() {
         }
     };
 
-	var result = tinytim.tim(template, data);
+	var result = tim(template, data);
 	assert.equal(result, "Hello Brighton. My name is Prem.");
 }
 
 exports["html"] = function() {
-	var tinytim = require('../');
+	var tim = require('../').tim;
 	var template = "<p><a href='{{url}}'>{{title}}</a></p>",
     data = {
         title: "Dharmafly",
         url:   "http://dharmafly.com"
     };
 
-	var result = tinytim.tim(template, data);
+	var result = tim(template, data);
 	assert.equal(result, "<p><a href='http://dharmafly.com'>Dharmafly</a></p>");
 }
 
 
 exports["nested"] = function() {
-	var tinytim = require('../');
+	var tim = require('../').tim;
 	var ul = "<ul>{{list}}</ul>",
     li = "<li>{{contents}}</li>",
     myList = "",
     i;
 
 	for (i=100; i<103; i++){
-	    myList += tinytim.tim(li, {contents: i});
+	    myList += tim(li, {contents: i});
 	}
-	var result = tinytim.tim(ul, {list: myList});
+	var result = tim(ul, {list: myList});
 	assert.equal(result, "<ul><li>100</li><li>101</li><li>102</li></ul>");
 }
 
 exports["array"] = function() {
-	var tinytim = require('../');
-	var result = tinytim.tim("Hello {{0}}", ["world"]);
+	var tim = require('../').tim;
+	var result = tim("Hello {{0}}", ["world"]);
 	assert.equal(result, "Hello world");
 }
 
 exports["array 2"] = function() {
-	var tinytim = require('../');
-	var result = tinytim.tim("Hello {{places.0}}", {places: ["world"]});
+	var tim = require('../').tim;
+	var result = tim("Hello {{places.0}}", {places: ["world"]});
 	assert.equal(result, "Hello world");
+}
+
+exports["exception"] = function() {
+	var tinytim = require('../');
+	assert.throws(function() {
+		var result = tim("Hello {{config.foo.bar}}", {config: {moo: "blah"}});
+	}, Error)
 }
 
 exports["start end"] = function() {
@@ -66,4 +73,13 @@ exports["start end"] = function() {
 	var result = tinytim.tim("Hello <%place%>", {place: "world"});
 	assert.equal(result, "Hello world");
 }
+
+exports["start end 2"] = function() {
+	var tinytim = require('../');
+	//here the start and end tag was changed at last test case
+	var result = tinytim.tim("Hello <%place%>", {place: "world"});
+	assert.equal(result, "Hello world");
+}
+
+
 

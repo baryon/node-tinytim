@@ -2,7 +2,7 @@
   "name": "tinytim",
   "description": "Node.js port of tinytim (A tiny, secure JavaScript micro-templating script)",
   "homepage": "http://github.com/baryon/node-tinytim",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "LI Long <lilong@gmail.com>",
   "contributors": [
     { "name": "Premasagar Rose", "email": "p@dharmafly.com" }

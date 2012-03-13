@@ -137,6 +137,7 @@ Further examples are discussed in the section "iterating through arrays" below.
 ### Changing the {{curly braces}} delimiter
 By default, template tags are delimited by "`{{`" and "`}}`" tokens.
 To change this, edit the `start` and `end` vars in the code.
+*** this will affect all module use tinytim, because node.js cache this package.
 
 ```javascript
 	var tinytim = require('tinytim');
@@ -147,9 +148,13 @@ To change this, edit the `start` and `end` vars in the code.
 ```
 
 
+### 0.0.2
+
+* throw an new Error when not found.  
+
 ### 0.0.1
 
-* Initial port.
+* Initial port.  
 
 ## License 
 
