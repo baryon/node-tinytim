@@ -35,14 +35,14 @@ exports["html"] = function() {
 exports["simple cache"] = function() {
 	var tinytim = require('../');
 	console.time('no-cache');
-	for (var i = 0; i < 200; i++) {
+	for (var i = 0; i < 100; i++) {
 		var result = tinytim.renderFile("test/string.tim", {place: "world"});
 		assert.equal(result, "Hello world");
 	}
 	console.timeEnd('no-cache');
 	
 	console.time('cache');
-	for (var i = 0; i < 200; i++) {
+	for (var i = 0; i < 100; i++) {
 		var result = tinytim.renderFile("test/string.tim", {place: "world"});
 		assert.equal(result, "Hello world");
 	}

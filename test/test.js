@@ -79,6 +79,11 @@ exports["start end 2"] = function() {
 	//here the start and end tag was changed at last test case
 	var result = tinytim.tim("Hello <%place%>", {place: "world"});
 	assert.equal(result, "Hello world");
+	tinytim.start = "{{";
+	tinytim.end = "}}";
+	var result = tinytim.tim("Hello {{place}}", {place: "world"});
+	assert.equal(result, "Hello world");
+
 }
 
 
