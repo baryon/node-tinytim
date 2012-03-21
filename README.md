@@ -2,6 +2,7 @@
 
 Node.js port of [tinytim](https://github.com/premasagar/tim/) (A tiny, secure JavaScript micro-templating script)
 
+
 ##Install
 -----
 ```javascript
@@ -164,6 +165,10 @@ To change this, edit the `start` and `end` vars in the code.
 	var result = tinytim.tim("Hello <%place%>", {place: "world"});
 	console.log(result); // Hello world
 ```
+
+# mustache.js and Handlebars.js
+tinytim is very simple, if you need a more powerful template library, see [mustache.js](http://mustache.github.com/) and [Handlebars.js](https://github.com/wycats/handlebars.js/)
+
 
 ## History
 
