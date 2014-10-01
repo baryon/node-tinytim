@@ -3,6 +3,7 @@ var assert = require('assert'),
 	tim = tinytim.tim;
 
 describe('Render File tests', function () {
+
 	it('file replace on simple string', function (done) {
 		var result = tinytim.renderFile("test/files/string.tim", {place: "world"});
 		assert.equal(result, "Hello world");

@@ -2,14 +2,15 @@ var assert = require('assert'),
 	tinytim = require('../'),
 	tim = tinytim.tim;
 
-describe('String inline tests', function () {
+describe('Render inline tests', function () {
+
 	it('inline replace on simple string', function (done) {
 		var result = tinytim.render("Hello {{place}}", {place: "world"});
 		assert.equal(result, "Hello world");
 		done();
 	});
 
-	it('inline path replace on simple string', function (done) {
+	it('Render inline path replace on simple string', function (done) {
 		var template = "Hello {{place}}. My name is {{person.name}}.",
 			data = {
 				place: "Brighton",
@@ -23,7 +24,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('inline replace on html string', function (done) {
+	it('Render inline replace on html string', function (done) {
 		var template = "<p><a href='{{url}}'>{{title}}</a></p>",
 			data = {
 				title: "Dharmafly",
@@ -35,7 +36,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('inline replace on nested object', function (done) {
+	it('Render inline replace on nested object', function (done) {
 		var ul = "<ul>{{list}}</ul>",
 			li = "<li>{{contents}}</li>",
 			myList = "",
@@ -50,7 +51,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('inline replace using simple array', function (done) {
+	it('Render inline replace using simple array', function (done) {
 
 		var result = tinytim.render("Hello {{0}}", ["world"]);
 		assert.equal(result, "Hello world");
@@ -58,7 +59,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('inline replace using object arrays', function (done) {
+	it('Render inline replace using object arrays', function (done) {
 
 		var result = tinytim.render("Hello {{places.0}}", {places: ["world"]});
 		assert.equal(result, "Hello world");
@@ -66,7 +67,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('throws exception if path is invalid', function (done) {
+	it('Render throws exception if path is invalid', function (done) {
 
 		assert.throws(function () {
 			var result = tinytim.render("Hello {{config.foo.bar}}", {config: {moo: "blah"}});
@@ -75,7 +76,7 @@ describe('String inline tests', function () {
 		done();
 	});
 
-	it('using non-standard template delimiters endings: `<%` and `%>`', function (done) {
+	it('Render using non-standard template delimiters endings: `<%` and `%>`', function (done) {
 		var tinytim = require('../');
 
 		tinytim.start = "<%";
@@ -83,6 +84,9 @@ describe('String inline tests', function () {
 
 		var result = tinytim.render("Hello <%place%>", {place: "world"});
 		assert.equal(result, "Hello world");
+
+		tinytim.start = "{{";
+		tinytim.end = "}}";
 
 		done();
 	});
