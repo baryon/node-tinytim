@@ -1,9 +1,13 @@
-var assert = require('assert');
-var tim = require('../').tim;
+var assert = require('assert'),
+	tinytim = require('../'),
+	tim = tinytim.tim;
 
 describe('String inline tests', function () {
+
 	it('inline replace on simple string', function (done) {
+
 		var result = tim("Hello {{place}}", {place: "world"});
+		console.log(result);
 		assert.equal(result, "Hello world");
 		done();
 	});
@@ -19,6 +23,7 @@ describe('String inline tests', function () {
 
 		var result = tim(template, data);
 		assert.equal(result, "Hello Brighton. My name is Prem.");
+
 		done();
 	});
 
@@ -31,6 +36,7 @@ describe('String inline tests', function () {
 
 		var result = tim(template, data);
 		assert.equal(result, "<p><a href='http://dharmafly.com'>Dharmafly</a></p>");
+
 		done();
 	});
 
