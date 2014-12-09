@@ -19,10 +19,10 @@ Add to your code:
 	console.log(result); // Hello world
 ```
 
-See [test/test.js](https://github.com/baryon/node-tinytim/blob/master/test/test.js) as example
+See [test/tim-replace.js](https://github.com/baryon/node-tinytim/blob/master/test/tim-replace.js) as example
 
 and support render and renderFile methods.  
-See [test/render.js](https://github.com/baryon/node-tinytim/blob/master/test/render.js) and [test/renderFile.js](https://github.com/baryon/node-tinytim/blob/master/test/renderFile.js)  for details.
+See [test/render-replace.js](https://github.com/baryon/node-tinytim/blob/master/test/render-replace.js) and [test/render-file-replace.js](https://github.com/baryon/node-tinytim/blob/master/test/render-file-replace.js)  for details.
 
 ```javascript
 	var tinytim = require('tinytim');
