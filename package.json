@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/baryon/node-tinytim"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "LI Long <lilong@gmail.com>",
   "license": "MIT",
   "contributors": [
